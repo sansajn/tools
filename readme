@@ -1,0 +1,19 @@
+{directory_iterator}
+
+Umožnuje iterovať obsah adresára v posix kompatibilnom systéme. Iterácia pomocou
+štandaardneho for cykla [Ukážka:
+
+	directory_iterator it{path_to_list}, end_it;
+	for (; it != end_it; ++it)
+		cout << (*it)->d_name << "\n";
+
+--- koniec ukážky], alebo pomocou for-loop s c++11 [Ukážka:
+
+	for (auto entry : directory_iterator{path_to_list})
+		cout << entry->d_name << "\n";
+
+--- koniec ukážky].
+
+Author: Adam Hlavatovič
+Email: adam.hlavatovic@protonmail.ch
+
