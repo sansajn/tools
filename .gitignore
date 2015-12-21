@@ -1,0 +1,9 @@
+*.o
+*.a
+*.so
+
+# creator
+*.files
+*.includes
+*.creator
+*.creator.user
