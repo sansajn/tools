@@ -7,3 +7,10 @@
 *.includes
 *.creator
 *.creator.user
+*.config
+
+# scons
+.sconsign.dblite
+
+# file-manager
+.directory
