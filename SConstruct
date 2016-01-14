@@ -1,14 +1,15 @@
 env = Environment(
-	#CXX='clang++', 
+	#CXX='clang++',
 	CPPFLAGS=['-std=c++11'], 
 	CCFLAGS=['-g', '-O0', '-Wall'],
-	LIBS=['gtest', 'pthread'])
+	LIBS=['gtest', 'pthread'],
+	CPPPATH=['boost/filesystem'])
 
-lib_objs = env.Object([
-	'directory_iterator.cpp',
-	'path.cpp',
-	'operations.cpp'])
+fs_objs = env.Object([
+	Glob('boost/filesystem/*.cpp')])
 
-env.Program(['test_directory_iter.cpp', lib_objs])
-env.Program(['test_path.cpp', lib_objs])
-env.Program(['test_operations.cpp', lib_objs])
+lib_objs = []
+
+env.Program(['test/test_directory_iter.cpp', fs_objs])
+env.Program(['test/test_path.cpp', fs_objs])
+env.Program(['test/test_operations.cpp', fs_objs])
