@@ -1,7 +1,14 @@
+
+Obsah:
+{directory_iterator}
+{boost::filesystem::path}
+{boost.filesystem.operations}
+
+
 {directory_iterator}
 
 Umožnuje iterovať obsah adresára v posix kompatibilnom systéme. Iterácia pomocou
-štandaardneho for cykla [Ukážka:
+štandardneho for cykla [Ukážka:
 
 	directory_iterator it{path_to_list}, end_it;
 	for (; it != end_it; ++it)
