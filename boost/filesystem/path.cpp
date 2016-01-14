@@ -18,6 +18,12 @@ path & path::operator/=(path const & p)
 	return *this;
 }
 
+path & path::operator+=(path const & p)
+{
+	_pathname += p._pathname;
+	return *this;
+}
+
 void path::clear()
 {
 	_pathname.clear();

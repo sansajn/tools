@@ -24,7 +24,10 @@ public:
 	path & operator=(path const & p);
 
 	// appends
-	path & operator/=(path const & p);
+	path & operator/=(path const & p);  //!< pripojenie
+
+	// concatenation
+	path & operator+=(path const & p);  //!< jednoduche spojenie
 
 	// modifiers
 	void clear();
@@ -72,5 +75,7 @@ public:
 private:
 	std::string _pathname;
 };
+
+inline path operator/(path const & lhs, path const & rhs) {return path{lhs} /= rhs;}
 
 }}  // boost::filesystem

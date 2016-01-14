@@ -106,6 +106,11 @@ TEST(path_test, has_root_directory)
 	EXPECT_FALSE(path{".."}.has_root_directory());
 }
 
+TEST(path_test, append_operator)
+{
+	EXPECT_EQ(path{"/foo/bar.txt"}, path{"/foo"} / path{"bar.txt"});
+}
+
 
 int main(int argc, char * argv[])
 {
