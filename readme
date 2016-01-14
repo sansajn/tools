@@ -14,5 +14,31 @@ Umožnuje iterovať obsah adresára v posix kompatibilnom systéme. Iterácia po
 
 --- koniec ukážky].
 
+
+{boost::filesystem::path}
+
+Implementuje cestu súboru/adresára v súborovom systéme. [Ukážka:
+
+	path p{"/foo/bar.txt"};
+	// ...
+
+--- koniec ukážky], pozri 'test_path.cpp' pre ďalšie ukážky použitia.
+
+
+{boost.filesystem.operations}
+
+Implementované funkcie s modulu operations
+
+	exists()
+
+[Ukážka:
+
+	path p{"foo/bar.txt"};
+	if (exists(p))
+		// do something ...
+
+--- koniec ukážky], pozri 'test_operations.cpp' pre ďalšie ukážky použitia.
+
+
 Author: Adam Hlavatovič, adam.hlavatovic@protonmail.ch
 
