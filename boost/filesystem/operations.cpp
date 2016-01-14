@@ -11,4 +11,13 @@ bool exists(path const & p)
 	return stat(p.c_str(), &buf) == 0;
 }
 
+uintmax_t file_size(path const & p)
+{
+	struct stat buf;
+	if (stat(p.c_str(), &buf) == 0)
+		return buf.st_size;
+	else
+		return -1;
+}
+
 }}  // boost::filesystem

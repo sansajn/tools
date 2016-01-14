@@ -37,6 +37,7 @@ Implementuje cestu súboru/adresára v súborovom systéme. [Ukážka:
 Implementované funkcie s modulu operations
 
 	exists()
+	file_size()
 
 [Ukážka:
 
