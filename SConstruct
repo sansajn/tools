@@ -36,3 +36,19 @@ json_conf_env.Append(
 )
 
 json_conf_env.Program(['test/json_app_config.cpp', 'config/json_config.cpp'])
+
+
+# lua config
+
+lua_conf_env = conf_env.Clone()
+lua_conf_env.Append(
+	LIBS=[]
+)
+lua_conf_env.ParseConfig('pkg-config --cflags --libs lua52')
+
+lua_conf_env.Program([
+	'test/lua_app_config.cpp',
+	'config/lua_config.cpp',
+	'config/script_engine.cpp',
+	'config/error_output.cpp'
+])
