@@ -21,33 +21,27 @@ lib_objs = []
 #fs_env.Program(['test/test_operations.cpp', fs_objs])
 
 
-# keyval config
+# config
 conf_env = common_env.Clone()
 
-conf_env.Program(['test/keyval_app_config.cpp', 'config/keyval_config.cpp'])
-
+# keyval config
+conf_env.Program(['config/test/keyval_app_config.cpp', 'config/keyval_config.cpp'])
 
 # json config
-
 json_conf_env = conf_env.Clone()
 json_conf_env.Append(
 	LIBS=['boost_system', 'boost_thread'],
 	CPPDEFINES=['BOOST_SPIRIT_THREADSAFE']  # for thread safe property_tree
 )
 
-json_conf_env.Program(['test/json_app_config.cpp', 'config/json_config.cpp'])
-
+json_conf_env.Program(['config/test/json_app_config.cpp', 'config/json_config.cpp'])
 
 # lua config
-
 lua_conf_env = conf_env.Clone()
-lua_conf_env.Append(
-	LIBS=[]
-)
 lua_conf_env.ParseConfig('pkg-config --cflags --libs lua52')
 
 lua_conf_env.Program([
-	'test/lua_app_config.cpp',
+	'config/test/lua_app_config.cpp',
 	'config/lua_config.cpp',
 	'config/script_engine.cpp',
 	'config/error_output.cpp'
