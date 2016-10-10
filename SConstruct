@@ -34,7 +34,11 @@ json_conf_env.Append(
 	CPPDEFINES=['BOOST_SPIRIT_THREADSAFE']  # for thread safe property_tree
 )
 
-json_conf_env.Program(['config/test/json_app_config.cpp', 'config/json_config.cpp'])
+json_conf_env.Program([
+	'config/test/json_app_config.cpp',
+	'config/json_config.cpp',
+	'config/string_algo.cpp'
+])
 
 # lua config
 lua_conf_env = conf_env.Clone()
