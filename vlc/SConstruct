@@ -1,0 +1,12 @@
+env = Environment(
+	CCFLAGS=['-std=c++11', '-Wall', '-O0', '-g'],
+	LIBS=['pthread']
+)
+
+env.ParseConfig('pkg-config --cflags --libs libvlc sdl2')
+
+env.Program(['test.cpp'])
+env.Program(['bare_playlist.cpp'])
+env.Program(['bare_image_playlist.cpp'])
+env.Program(['bare_transcode.cpp'])
+env.Program(['bare_image_transcode.cpp'])
