@@ -1,5 +1,5 @@
 common_env = Environment(
-	CXXFLAGS=['-std=c++14', '-O0', '-g', '-Wall'],
+	CXXFLAGS=['-std=c++11', '-O0', '-g', '-Wall'],
 	CPPPATH=['.']
 )
 
@@ -49,4 +49,12 @@ lua_conf_env.Program([
 	'config/lua_config.cpp',
 	'config/script_engine.cpp',
 	'config/error_output.cpp'
+])
+
+# sql3
+sql3_env = common_env.Clone()
+sql3_env.ParseConfig('pkg-config --cflags --libs sqlite3')
+sql3_env.Program([
+	'sql3/test/testdb.cpp',
+	'sql3/session.cpp'
 ])
