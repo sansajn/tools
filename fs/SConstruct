@@ -1,0 +1,5 @@
+env = Environment(
+	CXXFLAGS=['-std=c++11', '-Wall']
+)
+
+env.Program(['test.cpp', 'standard_directories.cpp'])
