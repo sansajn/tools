@@ -1,0 +1,6 @@
+env = Environment(
+	CCFLAGS=['-std=c++11', '-Wall', '-g', '-O0'],
+	LIBS=['pthread']
+)
+
+env.Program('test_event', ['main.cpp'])
