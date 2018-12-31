@@ -77,6 +77,22 @@ verbose=true
 
 ---
 
+# signáli (event/)
+
+podpora pre asynchrónne udalosti (signal/slot system)
+
+```c++
+event_handler<> h{foo};
+
+event<> e;
+e.add(h);
+e.call();
+e.remove(h);
+```
+
+
+---
+
 {directory_iterator}
 
 Umožnuje iterovať obsah adresára v posix kompatibilnom systéme. Iterácia pomocou
