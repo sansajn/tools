@@ -97,8 +97,26 @@ void test_event()
 }
 ```
 
+---
+
+# sqlite3 (sql3/)
+
+modul uľahčujúci prácu s sqlite3 databázou
+
+```c++
+#include "sql3/session.hpp"
+
+dbw::session sql("test.db");
+
+std::vector<int> one;
+std::vector<double> two;
+std::string tree;
+
+sql << "select one, two, tree from test where one=" << 1, one, two, tree;
+```
 
 ---
+
 
 {directory_iterator}
 
