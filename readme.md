@@ -141,52 +141,50 @@ void test_fs()
 
 # fake_boost (fake_boost/)
 
+**directory_iterator** : Umožnuje iterovať obsah adresára v posix kompatibilnom
+systéme. Iterácia pomocou štandardneho for cykla 
+
+```c++
+directory_iterator it{path_to_list}, end_it;
+for (; it != end_it; ++it)
+	cout << (*it)->d_name << "\n";
+```
+
+, alebo pomocou for-loop s c++11
+
+```c++
+for (auto entry : directory_iterator{path_to_list})
+	cout << entry->d_name << "\n";
+```
 
 
----
+**boost::filesystem::path** : Implementuje cestu súboru/adresára v súborovom
+systéme.
+
+```c++
+path p{"/foo/bar.txt"};
+// ...
+```
+
+, pozri `test_path.cpp` pre ďalšie ukážky použitia.
 
 
-{directory_iterator}
+**boost.filesystem.operations** : Implementované funkcie s modulu operations
 
-Umožnuje iterovať obsah adresára v posix kompatibilnom systéme. Iterácia pomocou
-štandardneho for cykla [Ukážka:
+```c++
+exists()
+file_size()
+```
 
-	directory_iterator it{path_to_list}, end_it;
-	for (; it != end_it; ++it)
-		cout << (*it)->d_name << "\n";
+Ukážka:
 
---- koniec ukážky], alebo pomocou for-loop s c++11 [Ukážka:
+```c++
+path p{"foo/bar.txt"};
+if (exists(p))
+	// do something ...
+```
 
-	for (auto entry : directory_iterator{path_to_list})
-		cout << entry->d_name << "\n";
-
---- koniec ukážky].
-
-
-{boost::filesystem::path}
-
-Implementuje cestu súboru/adresára v súborovom systéme. [Ukážka:
-
-	path p{"/foo/bar.txt"};
-	// ...
-
---- koniec ukážky], pozri 'test_path.cpp' pre ďalšie ukážky použitia.
-
-
-{boost.filesystem.operations}
-
-Implementované funkcie s modulu operations
-
-	exists()
-	file_size()
-
-[Ukážka:
-
-	path p{"foo/bar.txt"};
-	if (exists(p))
-		// do something ...
-
---- koniec ukážky], pozri 'test_operations.cpp' pre ďalšie ukážky použitia.
+, pozri 'test_operations.cpp' pre ďalšie ukážky použitia.
 
 
 Author: Adam Hlavatovič, adam.hlavatovic@protonmail.ch
