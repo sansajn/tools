@@ -1,9 +1,6 @@
-[TOC]
+**OBSAH**
 
-Obsah:
-{directory_iterator}
-{boost::filesystem::path}
-{boost.filesystem.operations}
+[TOC]
 
 
 # rozsahy (range/)
