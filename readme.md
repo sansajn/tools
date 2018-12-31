@@ -82,12 +82,19 @@ verbose=true
 podpora pre asynchrónne udalosti (signal/slot system)
 
 ```c++
-event_handler<> h{foo};
+void foo()
+{
+	cout << "foo()" << std::endl;
+}
 
-event<> e;
-e.add(h);
-e.call();
-e.remove(h);
+void test_event()
+{
+	event_handler<> h{foo};
+	event<> e;
+	e.add(h);
+	e.call();
+	e.remove(h);
+}
 ```
 
 
