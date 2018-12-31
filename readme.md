@@ -1,9 +1,31 @@
+[TOC]
 
 Obsah:
 {directory_iterator}
 {boost::filesystem::path}
 {boost.filesystem.operations}
 
+
+# rozsahy
+
+základna podpora pre rozsahy, knižnica obsahuje nasledujúce moduly
+
+**filter** : implementuje podporu pre filtrovanie rozsahou (jednotlivé položky rozsahu nie je možné meniť)
+
+```c++
+vector<int> data = vector<int>{{1, 2, 3, 4, 5, 6}};
+auto only_even = filtered(data, [](int n){return (n%2) == 0;});
+```
+
+**printer** : podpora pre vyzualizáciu rozsahou
+
+```c++
+vector<int> data = vector<int>{{1, 2, 3, 4, 5, 6}};
+auto only_even = filtered(data, [](int n){return (n%2) == 0;});
+cout << "only_even=" << printable(only_even) << "\n";
+```
+
+---
 
 {directory_iterator}
 
@@ -49,4 +71,3 @@ Implementované funkcie s modulu operations
 
 
 Author: Adam Hlavatovič, adam.hlavatovic@protonmail.ch
-

@@ -14,3 +14,7 @@
 
 # file-manager
 .directory
+
+/event/test_event
+/fs/test
+/sql3/test/test.db

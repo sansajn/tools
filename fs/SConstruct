@@ -1,5 +1,7 @@
 env = Environment(
-	CXXFLAGS=['-std=c++11', '-Wall']
+	CXXFLAGS=['-std=c++11', '-Wall'],
+	LIBS=['boost_system']
 )
 
 env.Program(['test.cpp', 'standard_directories.cpp'])
+env.Program(['test_with_boost.cpp', 'standard_directories.cpp'])

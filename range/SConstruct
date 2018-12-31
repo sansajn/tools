@@ -1,0 +1,7 @@
+env = Environment(CXXFLAGS=['-std=c++17', '-Wall', '-g', '-O0'])
+
+range_objs = env.Object(Glob('*.cpp'))
+
+env.Program(['test/sample_filter.cpp', range_objs])
+
+env.Program('test/test', ['test/test_filter.cpp'])
