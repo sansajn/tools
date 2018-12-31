@@ -106,14 +106,42 @@ modul uľahčujúci prácu s sqlite3 databázou
 ```c++
 #include "sql3/session.hpp"
 
-dbw::session sql("test.db");
+void test_sql()
+{
+	dbw::session sql("test.db");
 
-std::vector<int> one;
-std::vector<double> two;
-std::string tree;
+	std::vector<int> one;
+	std::vector<double> two;
+	std::string tree;
 
-sql << "select one, two, tree from test where one=" << 1, one, two, tree;
+	sql << "select one, two, tree from test where one=" << 1, one, two, tree;
+}
 ```
+
+---
+
+# súborový sytém (fs/)
+
+v podstate boost::filesystem ako fs menný priestor
+
+```c++
+#include "fs.hpp"
+
+void test_fs()
+{
+	cout 
+		<< "temp: " << fs::standard_directories::temp() << "\n"
+		<< "user home: " << fs::standard_directories::user_home() << "\n"
+		<< "current working: " << fs::standard_directories::working() << "\n"
+		<< "program directory: " << fs::standard_directories::program_directory() << "\n";
+}
+```
+
+---
+
+# fake_boost (fake_boost/)
+
+
 
 ---
 
